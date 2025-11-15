@@ -629,7 +629,21 @@ body::before {
 }
 
 
-/* SERVICES TABLE */
+/* ===== SERVICES SECTION ===== */
+
+/* Main heading: “What’s Included in Our Driver Packages” */
+.services-heading {
+    text-align: center;
+    font-size: 34px;
+    color: #e6ff00;           /* Neon yellow */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Wrapper around the table */
 .services-table {
     width: 100%;
     display: flex;
@@ -638,88 +652,107 @@ body::before {
     padding-bottom: 60px;
 }
 
+/* Actual table */
 .services-table table {
     width: 80%;
+    max-width: 1100px;
     border-collapse: collapse;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.65);
     border-radius: 12px;
     overflow: hidden;
 }
 
+/* Table headings: “Daily Drivers” / “Monthly Drivers” */
 .services-table th {
-    background-color: #e6ff00; /* your neon yellow */
-    color: black;
+    background-color: #e6ff00;
+    color: #000;
     font-size: 26px;
     padding: 20px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* Table columns */
+.services-table td {
+    width: 50%;
+    padding: 25px 30px;
+    vertical-align: top;
+    color: #ffffff;
+    font-size: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.services-table td {
-    width: 50%;
-    padding: 25px;
-    vertical-align: top;
-    color: white;
-    font-size: 18px;
-    border: 1px solid rgba(255,255,255,0.2);
-        font-family: Arial, Helvetica, sans-serif;
-
+/* Remove right border on last column */
+.services-table td:last-child {
+    border-right: none;
 }
 
+/* Lists inside table cells */
 .services-table ul {
     list-style: none;
+    margin: 0;
     padding-left: 0;
 }
 
 .services-table li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .services-table li:last-child {
-    border-bottom: 0;
+    border-bottom: none;
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
+/* “What Else We Offer” title + list */
+.other-services {
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.other-services li {
+    color: #ffffff;
+    font-size: 22px;
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== MOBILE / TABLET ADJUSTMENTS ===== */
+@media (max-width: 900px) {
+
+    .services-table {
+        padding-bottom: 40px;
+    }
+
     .services-table table {
         width: 95%;
     }
 
     .services-table th {
         font-size: 22px;
+        padding: 16px;
     }
 
     .services-table td {
+        display: block;
+        width: 100%;
+        border-right: none;
         font-size: 16px;
-        padding: 18px;
+        padding: 18px 20px;
+    }
+
+    .services-heading {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .other-services li {
+        font-size: 18px;
     }
 }
-.services-heading {
-    text-align: center;
-    font-size: 34px;
-    color: #e6ff00; /* Neon yellow */
-    margin-top: 40px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-        font-family: Arial, Helvetica, sans-serif;
-
-}
-.other-services {
-    list-style: none;
-    text-align: center;
-    margin-top: 20px;
-    padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.other-services li {
-    color: white;
-    font-size: 22px;
-    margin: 10px 0;
-        font-family: Arial, Helvetica, sans-serif;
-
-}
-
