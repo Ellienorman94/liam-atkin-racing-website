@@ -531,7 +531,7 @@ body::before {
     text-decoration: none;
     font-weight: bold;
       flex-direction: column;
-      
+    font-family: 'Poppins', sans-serif;
 
   }
   /* show the hamburger icon */
@@ -549,4 +549,57 @@ body::before {
   .main-nav.open .nav-links {
     display: flex;
   }
+}
+
+
+/* ===== Thank-you page ===== */
+
+.thankyou-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  background: url('your-background-image.jpg') center/cover no-repeat fixed; /* optional */
+}
+
+.thankyou-card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.thankyou-card h1 {
+  margin-bottom: 12px;
+  font-size: 2rem;
+  color: #f5ff3d; /* LAR yellow */
+}
+
+.thankyou-card p {
+  margin-bottom: 24px;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.btn-thankyou {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid #f5ff3d;
+  color: #f5ff3d;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  
+}
+
+.btn-thankyou:hover {
+  background: #f5ff3d;
+  color: #000000;
+  transform: translateY(-1px);
 }
