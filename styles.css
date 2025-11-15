@@ -213,7 +213,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("./images/mylesbackground.jpeg") center/cover no-repeat;
+  background: url("./images/mylesbackground\ \(1\).jpeg") center/cover no-repeat;
   background-color: rgba(0, 0, 0, 0.1);
   filter: grayscale(100%) opacity(0.5);
   z-index: -1;
