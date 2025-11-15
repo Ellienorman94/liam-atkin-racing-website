@@ -1,0 +1,552 @@
+
+/*HOME PAGE*/
+
+body {
+  background-color: #000000; 
+  color: #ffffff; 
+}
+
+.metallic-blue {
+    background: linear-gradient(
+    145deg,
+    #07112b 0%,
+    #0b1b48 30%,
+    rgba(255,255,255,0.10) 47%,
+    rgba(255,255,255,0.10) 50%,
+    rgba(255,255,255,0.10) 53%,
+    #122a63 80%,
+    #07112b 100%
+);
+    background-size: 400% 400%;
+    animation: shine 8s linear infinite;
+    color: #fff;
+    padding: 14px 20px;
+    max-height: 240px;
+    border-radius: 12px;
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,0.2),
+        0 4px 12px rgba(0,0,0,0.6);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@keyframes shine {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0;
+  padding: 0%;
+  font-size: 2.5rem;
+  color: #fffb00; 
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px #001f6b;
+}
+
+.header-logo {
+  width: 200px; 
+  line-height: 0%;
+  max-width: 100%;
+  height: auto;
+  margin: 0%;
+  display: block;
+}
+
+.banner-logo{
+  display: flex;              /* <— key change */
+  flex-direction: column;     /* stack logo over tagline */
+  align-items: flex-start;    /* or center */
+  gap: 4px;                   /* controls the space between them */
+  margin-left: 20px;
+}
+
+
+.banner-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  max-width: 1200px;     
+  margin: 0 auto;  
+}
+
+.banner-text{
+    flex-grow: 1;
+    text-align: left;      
+  margin-left: 0;     
+  padding-left: 20px;
+}
+
+
+.tagline {
+  font-family: 'Arial', sans-serif;
+  margin: 0%;
+  padding: 0%;
+  line-height: 1.1;
+  text-align: left;
+  font-size:smaller;
+  font-weight: 400;
+  opacity: .9;
+  color: #fff;
+  text-transform: none;
+  font-style: italic;
+  margin-top: -20px;
+}
+
+
+.carousel-container {
+  width: 100%;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.carousel-slide img {
+    width: auto;           /* Let height control the scale */
+    max-width: 75%;        /* Or whatever percentage works best */
+    max-height: 400px;     /* Adjust to control vertical size */
+    height: auto;
+    object-fit: cover;     /* Keeps aspect ratio */
+    margin: 0 auto;        /* Centers the image */
+}
+.carousel-slide {
+  display: flex;
+  width: 75%;
+  animation: scroll 60s infinite linear;
+}
+
+.carousel-slide img {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+.background-image {
+    position: fixed;      /* stays in place when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* makes sure it covers the whole screen */
+    z-index: -1;          /* puts it behind all other content */
+    opacity: 0.4;         /* fade effect */
+}
+
+.footer{
+    text-align: center;
+}
+
+.welcome-paragraph{
+  color: #e0e0e0;          
+  text-align: center;
+  margin: 30px auto;
+  width: 100%;
+  overflow: hidden;
+  max-width: 1500px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTACT US PAGE*/
+
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #fffb00; /*fluo yellow*/
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e6e600;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("./images/mylesbackground.JPG") center/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%) opacity(0.5);
+  z-index: -1;
+}
+
+/* ===== UPCOMING EVENTS ===== */
+
+#events {
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+/* space below the banner */
+.events-banner {
+  margin-bottom: 20px;
+}
+
+/* each event row */
+.event-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+/* date block on the left */
+.event-date {
+  min-width: 110px;
+  text-align: center;
+  background: #0b1b48;              /* navy */
+  border-radius: 14px;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  color: #f5ff3d;                   /* LAR yellow */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.event-day {
+  font-size: 0.75rem;
+  display: block;
+  opacity: 0.9;
+}
+
+.event-number {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  display: block;
+}
+
+.event-month {
+  font-size: 0.85rem;
+  display: block;
+}
+
+/* event title */
+.event-info h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* mobile: stack date above title */
+@media (max-width: 700px) {
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-date {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .event-day,
+  .event-number,
+  .event-month {
+    display: inline-block;
+  }
+}
+
+/* ===== UPCOMING EVENTS ===== */
+
+#events {
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+/* space below the banner */
+.events-banner {
+  margin-bottom: 20px;
+}
+
+/* each event row */
+.event-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  border: 2px solid #f5ff3d;   /* TEMP: yellow border so you can see it */
+}
+
+/* date block on the left */
+.event-date {
+  min-width: 110px;
+  text-align: center;
+  background: #0b1b48;          /* navy */
+  border-radius: 14px;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  color: #f5ff3d;               /* LAR yellow */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.event-day {
+  font-size: 0.75rem;
+  display: block;
+  opacity: 0.9;
+}
+
+.event-number {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  display: block;
+}
+
+.event-month {
+  font-size: 0.85rem;
+  display: block;
+}
+
+/* event title */
+.event-info h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* mobile: stack date above title */
+@media (max-width: 700px) {
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-date {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .event-day,
+  .event-number,
+  .event-month {
+    display: inline-block;
+  }
+}
+
+/* ===== DRIVERS PAGE ===== */
+
+#drivers {
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+.drivers-banner {
+    margin-bottom: 30px;
+}
+
+/* grid layout */
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* each driver card */
+.driver-card {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+    border: 1.5px solid rgba(245,255,61,0.4); /* subtle LAR yellow outline */
+}
+
+/* driver images */
+.driver-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #0b1b48;   /* navy border */
+}
+
+/* driver name */
+.driver-card h2 {
+    font-size: 1.2rem;
+    margin: 6px 0;
+    color: #f5ff3d; /* LAR yellow */
+    letter-spacing: 0.5px;
+}
+
+/* driver class text */
+.driver-class {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* ===== DRIVER CLASS HEADINGS ===== */
+.class-heading {
+    font-size: 1.6rem;
+    color: #f5ff3d;          /* LAR yellow */
+    margin: 30px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+.main-nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+
+    /* Let logo sit on its own line, nav centred underneath */
+    .banner-content {
+        display: block;           /* no flex row → no left/right push */
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .main-nav {
+        margin-top: 4px;         /* little gap under the logo */
+        display: flex;
+        justify-content: center;  /* centre the nav in the banner */
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        padding: 8px 0;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: yellow;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+/* ===== MOBILE NAVBAR (≤ 768px) ===== */
+@media (max-width: 768px) {
+
+  /* hide links by default on small screens */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;        /* align links under the burger */
+    gap: 6px;
+    margin-top: 8px;
+  }
+.nav-links a {
+    color: #f5ff3d;               /* LAR yellow */
+    text-decoration: none;
+    font-weight: bold;
+      flex-direction: column;
+      
+
+  }
+  /* show the hamburger icon */
+  .menu-toggle {
+    display: block;
+    color: #ffffff;
+  }
+.nav-links a:hover {
+    color: #ffffff;
+  }
+  .main-nav.open .nav-links {
+    display: flex;
+  }
+  /* when JS adds .open to .main-nav, show the links */
+  .main-nav.open .nav-links {
+    display: flex;
+  }
+}
