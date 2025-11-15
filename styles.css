@@ -111,24 +111,20 @@ h1 {
 }
 
 .carousel-slide img {
-    width: auto;           /* Let height control the scale */
-    max-width: 75%;        /* Or whatever percentage works best */
-    max-height: 400px;     /* Adjust to control vertical size */
-    height: auto;
-    object-fit: cover;     /* Keeps aspect ratio */
-    margin: 0 auto;        /* Centers the image */
+    width: auto;           /* don’t force a fixed width */
+  max-width: 75%;        /* cap size so they don’t get huge */
+  max-height: 400px;     /* control vertical size */
+  height: auto;
+  object-fit: contain;   /* show whole jacket/umbrella */
+  margin: 0 auto;     /* Centers the image */
 }
 .carousel-slide {
   display: flex;
-  width: 75%;
+  
   animation: scroll 60s infinite linear;
 }
 
-.carousel-slide img {
-  width: 75%;
-  height: auto;
-  object-fit: cover;
-}
+
 
 @keyframes scroll {
   0%   { transform: translateX(0); }
@@ -537,9 +533,16 @@ body::before {
     font-family: 'Arial', sans-serif;
 
   }
+  header {
+    position: relative;   /* so the button positions inside it */
+  }
   /* show the hamburger icon */
   .menu-toggle {
     display: block;
+    position: absolute;
+    right: -10px;          /* distance from the right edge */
+    top: 10%;             /* halfway down the header */
+    transform: translateY(-50%);
     color: #ffffff;
   }
 .nav-links a:hover {
@@ -624,3 +627,99 @@ body::before {
     color: #ffffff;        /* turns white on hover */
     text-decoration: underline;
 }
+
+
+/* SERVICES TABLE */
+.services-table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+.services-table table {
+    width: 80%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.services-table th {
+    background-color: #e6ff00; /* your neon yellow */
+    color: black;
+    font-size: 26px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.services-table td {
+    width: 50%;
+    padding: 25px;
+    vertical-align: top;
+    color: white;
+    font-size: 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+        font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.services-table ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.services-table li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.services-table li:last-child {
+    border-bottom: 0;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .services-table table {
+        width: 95%;
+    }
+
+    .services-table th {
+        font-size: 22px;
+    }
+
+    .services-table td {
+        font-size: 16px;
+        padding: 18px;
+    }
+}
+.services-heading {
+    text-align: center;
+    font-size: 34px;
+    color: #e6ff00; /* Neon yellow */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+        font-family: Arial, Helvetica, sans-serif;
+
+}
+.other-services {
+    list-style: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.other-services li {
+    color: white;
+    font-size: 22px;
+    margin: 10px 0;
+        font-family: Arial, Helvetica, sans-serif;
+
+}
+

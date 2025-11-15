@@ -24,50 +24,134 @@
         </ul>
     </nav>
 </header>
-<form class="contact-form" action="https://formspree.io/f/mvgdrpvq" method="POST">
+<form class="contact-form" action="https://formspree.io/f/mvgdrpvq" method="POST" novalidate>
 
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" required minlength="2" pattern="[A-Za-z\s]+">
+    <small class="error-msg"></small>
 
     <label for="email">Email Address</label>
     <input type="email" id="email" name="email" required>
+    <small class="error-msg"></small>
 
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone">
+    <input type="tel" id="phone" name="phone" required pattern="^[0-9+\s-]{7,15}$">
+    <small class="error-msg"></small>
 
     <label for="subject">Subject</label>
-    <input type="text" id="subject" name="subject" required>
+    <input type="text" id="subject" name="subject" required minlength="3">
+    <small class="error-msg"></small>
 
     <label for="message">Message</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+    <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+    <small class="error-msg"></small>
 
     <button type="submit">Send Message</button>
 </form>
 
-
-
 <script>
-  const form = document.querySelector(".contact-form");
+const form = document.querySelector(".contact-form");
 
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault(); // stop Formspree's default redirect
+// Show an error under the right field
+function showError(input, message) {
+    const errorMsg = input.nextElementSibling;
+    errorMsg.textContent = message;
+    errorMsg.style.color = "red";
+    input.style.borderColor = "red";
+}
 
+// Clear error for a field
+function clearError(input) {
+    const errorMsg = input.nextElementSibling;
+    errorMsg.textContent = "";
+    input.style.borderColor = "";
+}
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // we’ll only submit via JS
+
+    let isValid = true;
+
+    // NAME validation
+    const name = document.getElementById("name");
+    if (name.value.trim().length < 2) {
+        showError(name, "Please enter your full name.");
+        isValid = false;
+    } else if (!/^[A-Za-z\s]+$/.test(name.value.trim())) {
+        showError(name, "Name can only contain letters and spaces.");
+        isValid = false;
+    } else {
+        clearError(name);
+    }
+
+    // EMAIL validation
+    const email = document.getElementById("email");
+    if (!email.checkValidity()) {
+        showError(email, "Please enter a valid email address.");
+        isValid = false;
+    } else {
+        clearError(email);
+    }
+
+    // PHONE validation (no tricky regex!)
+    const phone = document.getElementById("phone");
+    const phoneValue = phone.value.trim();
+    const digitsOnly = phoneValue.replace(/[^\d]/g, ""); // strip spaces/+/- etc
+
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+        showError(phone, "Please enter a valid phone number (7–15 digits).");
+        isValid = false;
+    } else {
+        clearError(phone);
+    }
+
+    // SUBJECT validation
+    const subject = document.getElementById("subject");
+    if (subject.value.trim().length < 3) {
+        showError(subject, "Subject must be at least 3 characters.");
+        isValid = false;
+    } else {
+        clearError(subject);
+    }
+
+    // MESSAGE validation
+    const message = document.getElementById("message");
+    if (message.value.trim().length < 10) {
+        showError(message, "Message must be at least 10 characters.");
+        isValid = false;
+    } else {
+        clearError(message);
+    }
+
+    // If any field failed, stop here
+    if (!isValid) {
+        return;
+    }
+
+    // ✅ All good – now send to Formspree
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
-    });
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+        });
 
-    if (response.ok) {
-      window.location.href = "thankyou.html"; // your custom page
-    } else {
-      alert("There was a problem sending your message.");
+        if (response.ok) {
+            window.location.href = "thankyou.html"; // redirect to your page
+        } else {
+            alert("There was a problem sending your message. Please try again.");
+        }
+    } catch (err) {
+        alert("Network error. Please try again.");
     }
-  });
+});
 </script>
 
 
+
+
+<script src="./script.js"></script>
 </body>
 </html>
