@@ -724,6 +724,7 @@ body::before {
 }
 
 /* ===== MOBILE / TABLET ADJUSTMENTS ===== */
+/* ===== MOBILE / TABLET ADJUSTMENTS ===== */
 @media (max-width: 900px) {
 
     .services-table {
@@ -735,20 +736,23 @@ body::before {
     }
 
     .services-table th {
-        font-size: 22px;
-        padding: 16px;
+        font-size: 20px;
+        padding: 14px;
     }
 
     .services-table td {
-        display: block;
-        width: 100%;
+        /* stay as table-cells, just smaller text */
+        font-size: 15px;
+        padding: 14px 16px;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .services-table td:last-child {
         border-right: none;
-        font-size: 16px;
-        padding: 18px 20px;
     }
 
     .services-heading {
-        font-size: 28px;
+        font-size: 26px;
         margin-top: 30px;
     }
 
@@ -756,3 +760,4 @@ body::before {
         font-size: 18px;
     }
 }
+
