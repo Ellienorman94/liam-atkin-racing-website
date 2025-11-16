@@ -131,11 +131,7 @@ h1 {
   66%  { transform: translateX(-200%); }
   100% { transform: translateX(0); }
 }
-@media (max-width: 768px) {
-  .carousel-slide {
-    animation-duration: 30s;  /* faster loop on phones */
-  }
-}
+
 
 
 .background-image {
@@ -560,7 +556,9 @@ body::before {
   .main-nav.open .nav-links {
     display: flex;
   }
+  
 }
+
 
 
 /* ===== Thank-you page ===== */
@@ -764,5 +762,29 @@ body::before {
     .other-services li {
         font-size: 18px;
     }
+    .carousel-slide img {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    .carousel-slide {
+        animation: scroll-mobile 60s infinite linear;
+    }
+}
+
+
+@keyframes scroll-mobile {
+  0%      { transform: translateX(0); }        /* image 1 */
+  14.28%  { transform: translateX(-100%); }    /* image 2 */
+  28.56%  { transform: translateX(-200%); }    /* image 3 */
+  42.84%  { transform: translateX(-300%); }    /* image 4 */
+  57.12%  { transform: translateX(-400%); }    /* image 5 */
+  71.4%   { transform: translateX(-500%); }    /* image 6 */
+  85.68%  { transform: translateX(-600%); }    /* image 7 */
+  100%    { transform: translateX(0); }        /* bounce back */
 }
 
