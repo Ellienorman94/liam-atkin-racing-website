@@ -762,16 +762,19 @@ body::before {
     .other-services li {
         font-size: 18px;
     }
+
+    /* HOME PAGE CAROUSEL – MOBILE ONLY */
     .home-carousel .carousel-slide img {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%;
         max-height: none;
-        object-fit: cover;
-        margin: 0;
+        height: auto;
+        object-fit: contain;   /* show full item, not zoomed */
+        margin: 0 auto;
     }
 
-    .home-carousel .carousel-slide img {
+    .home-carousel .carousel-slide {
         animation: scroll-mobile 60s infinite linear;
     }
 }
