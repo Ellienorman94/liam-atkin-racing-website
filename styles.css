@@ -762,7 +762,7 @@ body::before {
     .other-services li {
         font-size: 18px;
     }
-    .carousel-slide img {
+    .home-carousel .carousel-slide img {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%;
@@ -771,7 +771,7 @@ body::before {
         margin: 0;
     }
 
-    .carousel-slide {
+    .home-carousel .carousel-slide img {
         animation: scroll-mobile 60s infinite linear;
     }
 }
