@@ -110,28 +110,33 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
-.carousel-slide img {
-    width: auto;           /* don’t force a fixed width */
-  max-width: 75%;        /* cap size so they don’t get huge */
-  max-height: 400px;     /* control vertical size */
-  height: auto;
-  object-fit: contain;   /* show whole jacket/umbrella */
-  margin: 0 auto;     /* Centers the image */
-}
 .carousel-slide {
   display: flex;
-  
-  animation: scroll 60s infinite linear;
+  animation: scroll 50s infinite linear;  /* desktop speed */
 }
 
+.carousel-slide img {
+  width: auto;
+  max-width: 75%;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
 
-
+/* ORIGINAL bounce-style animation – never ends on a blank frame */
 @keyframes scroll {
   0%   { transform: translateX(0); }
   33%  { transform: translateX(-100%); }
   66%  { transform: translateX(-200%); }
   100% { transform: translateX(0); }
 }
+@media (max-width: 768px) {
+  .carousel-slide {
+    animation-duration: 30s;  /* faster loop on phones */
+  }
+}
+
 
 .background-image {
     position: fixed;      /* stays in place when scrolling */
