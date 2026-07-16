@@ -190,6 +190,37 @@ h1 {
     transform:translateY(-2px);
 }
 
+.social-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(0,0,0,0.7);
+}
+
+.social-footer p {
+    color: white;
+    font-size: 22px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 34px;
+    font-family: 'Arial', sans-serif;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffe600;   /* Your yellow */
+    transform: scale(1.15);
+}
 /* CONTACT US PAGE*/
 
 .contact-form {
